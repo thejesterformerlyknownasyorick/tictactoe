@@ -57,8 +57,9 @@ end
 module VictoryCheck
     
     def check(win_array, p)
+        perm_array = p.permutation(3) {|permutation| p += permutation}
         win_array.any? { |arr| 
-        arr == p
+        arr == perm_array
         }
     end
 
@@ -68,7 +69,6 @@ module PlayerArray
     
     def add_to_array(player_arr, x)
         player_arr.push(x)
-        player_arr.permutation(3) {|permutation| player_arr = permutation}
     end
 
 end
